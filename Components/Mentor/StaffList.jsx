@@ -1,7 +1,7 @@
 function SearchBar({ search, setSearch }) {
   return (
     <label className="search-bar">
-      <span>Search tasks</span>
+      <span>Search</span>
       <input
         type="text"
         placeholder="Search..."

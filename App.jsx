@@ -19,12 +19,14 @@ import Assignmnents from "./Mentor/Pages/Assignments";
 import CreateAssignments from "./Mentor/Pages/CreateAssignment";
 import GradedAssignments from "./Mentor/Pages/GradedAssignments";
 import CreateLessonPlan from "./Mentor/Pages/LessonPlanCreation";
+import LessonPlan from "./Mentor/Pages/Lesson";
 import MtDashboard from "./Mentor/Pages/MtDashboard";
 
 //students
 import Assignms from "./Student/Pages/Assignments";
 import Grades from "./Student/Pages/Grades";
 import StdDashboard from "./Student/Pages/StdDashboard";
+import ProtectedRoute from "./App/Pages/ProtectedRoutes";
 
 function App() {
     return (
@@ -39,14 +41,15 @@ function App() {
               <Route path="searchbar" element={<Searchbar/>}></Route>
             </Route>
 
-            <Route path="/MtDashboard" element={<MtDashboard/>}>
+            <Route path="/MtDashboard" element={<ProtectedRoute allowedRole={teacher}><MtDashboard/></ProtectedRoute>}>
               <Route path="assignments" element={<Assignmnents/>}></Route>
               <Route path="createassignments" element={<CreateAssignments/>}></Route>
               <Route path="gradedassignments" element={<GradedAssignments/>}></Route>
               <Route path="createlessonplan" element={<CreateLessonPlan/>}></Route>
+              <Route path="lessonplan" element={<LessonPlan/>}></Route>
             </Route>
             
-            <Route path="/StdDashboard" element={<StdDashboard/>}>
+            <Route path="/StdDashboard" element={<ProtectedRoute allowedRole={student}><StdDashboard/></ProtectedRoute>}>
                <Route path="assignms" element={<Assignms/>}/>
                <Route path="grades" element={<Grades/>}/>
                <Route path="course" element={<Course/>}/>

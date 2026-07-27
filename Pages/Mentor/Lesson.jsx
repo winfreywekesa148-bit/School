@@ -5,7 +5,9 @@ function LessonPlans() {
         {
             id: 1,
             course: "Acting Classes🎭 🎬",
-            mentor: "John Doe",
+            mentor_id: 3,
+            mentorfirst_name: "John",
+            mentorlast_name: "Doe",
             topic: "Getting into character",
             date: "2026-7-27"
         }

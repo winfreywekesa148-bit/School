@@ -5,7 +5,8 @@ function Assignments() {
         {
             id:1,
             title: "Read on materials for sketching",
-            course: "Sketching Classes✏️ ✍️",
+            course_name: "Sketching Classes✏️ ✍️",
+            course_id: 4,
             dueDate: "2026-07-30"
         }
     ];

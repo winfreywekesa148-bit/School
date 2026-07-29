@@ -1,32 +1,30 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // app pages
-import footer from "./App/Components/Footer";
-import Navbar from "./App/Components/Navbar";
-import Searchbar from "./App/Components/Searchbar";
-import Home from "./App/Pages/Home";
-import About from "./App/Pages/About";
-import Register from "./App/Pages/Register";
-import Login from "./App/Pages/Login";
-import ForgotPassward from "./App/Pages";
-import ResetPassward from "./App/Pages";
+import Searchbar from "./Components/App/Searchbar";
+import Home from "./Pages/App/Home";
+import About from "./Pages/App/About";
+import Register from "./Pages/App/Register";
+import Login from "./Pages/App/Login";
+import ForgotPassward from "./Pages/App/Forgotpassword";
+import ResetPassward from "./Pages/App/Resetpassword";
 
 //course
-import Course from "./Course/Pages/Course";
+import Course from "./Pages/Course/Course";
 
 //mentor
-import Assignmnents from "./Mentor/Pages/Assignments";
-import CreateAssignments from "./Mentor/Pages/CreateAssignment";
-import GradedAssignments from "./Mentor/Pages/GradedAssignments";
-import CreateLessonPlan from "./Mentor/Pages/LessonPlanCreation";
-import LessonPlan from "./Mentor/Pages/Lesson";
-import MtDashboard from "./Mentor/Pages/MtDashboard";
+import Assignmnents from "./Pages/Mentor/Assignments";
+import CreateAssignments from "./Pages/Mentor/CreateAssignment";
+import GradedAssignments from "./Pages/Mentor/GradedAssignments";
+import CreateLessonPlan from "./Pages/Mentor/LessonPlanCreation";
+import LessonPlan from "./Pages/Mentor/Lesson";
+import MtDashboard from "./Pages/Mentor/MtDashboard";
 
 //students
-import Assignms from "./Student/Pages/Assignments";
-import Grades from "./Student/Pages/Grades";
-import StdDashboard from "./Student/Pages/StdDashboard";
-import ProtectedRoute from "./App/Pages/ProtectedRoutes";
+import Assignms from "./Pages/Student/Assignments";
+import Grades from "./Pages/Student/Grades";
+import StdDashboard from "./Pages/Student/StdDashboard";
+import ProtectedRoute from "./Pages/App/ProtectedRoutes";
 
 function App() {
     return (

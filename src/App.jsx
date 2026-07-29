@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // app pages
@@ -6,8 +7,8 @@ import Home from "./Pages/App/Home";
 import About from "./Pages/App/About";
 import Register from "./Pages/App/Register";
 import Login from "./Pages/App/Login";
-import ForgotPassward from "./Pages/App/Forgotpassword";
-import ResetPassward from "./Pages/App/Resetpassword";
+import ForgotPassward from "./Pages/App/ForgotPassword";
+import ResetPassward from "./Pages/App/ResetPassword";
 
 //course
 import Course from "./Pages/Course/Course";
@@ -27,6 +28,11 @@ import StdDashboard from "./Pages/Student/StdDashboard";
 import ProtectedRoute from "./Pages/App/ProtectedRoutes";
 
 function App() {
+  const Roles = {
+    TEACHER : "teacher",
+    ADMIN: "admin",
+    STUDENT: "student"
+  }
     return (
         <BrowserRouter>
         <Routes>
@@ -39,7 +45,7 @@ function App() {
               <Route path="searchbar" element={<Searchbar/>}></Route>
             </Route>
 
-            <Route path="/MtDashboard" element={<ProtectedRoute allowedRole={teacher}><MtDashboard/></ProtectedRoute>}>
+            <Route path="/MtDashboard" element={<ProtectedRoute allowedRole="teacher"><MtDashboard/></ProtectedRoute>}>
               <Route path="assignments" element={<Assignmnents/>}></Route>
               <Route path="createassignments" element={<CreateAssignments/>}></Route>
               <Route path="gradedassignments" element={<GradedAssignments/>}></Route>
@@ -47,7 +53,7 @@ function App() {
               <Route path="lessonplan" element={<LessonPlan/>}></Route>
             </Route>
             
-            <Route path="/StdDashboard" element={<ProtectedRoute allowedRole={student}><StdDashboard/></ProtectedRoute>}>
+            <Route path="/StdDashboard" element={<ProtectedRoute allowedRole="student"><StdDashboard/></ProtectedRoute>}>
                <Route path="assignms" element={<Assignms/>}/>
                <Route path="grades" element={<Grades/>}/>
                <Route path="course" element={<Course/>}/>

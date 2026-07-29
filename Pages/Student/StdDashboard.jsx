@@ -10,9 +10,12 @@ function StdDashboard() {
 
             <div className="card">
                 <Link to="/assignments">
-                <button>📝Submit Assignment</button></Link>
+                <button>📝Submit Assignment</button>
+                </Link>
 
-                <Link to="/grades"><button>📊View Grades</button></Link>
+                <Link to="/grades">
+                <button>📊View Grades</button>
+                </Link>
             </div>
         </div>    
     );

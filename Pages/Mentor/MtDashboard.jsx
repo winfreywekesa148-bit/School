@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MtDashboard() {
     return (
         <div className="dashboard">
@@ -10,56 +12,35 @@ function MtDashboard() {
                 <section className="Lesson plan">
                     <h2>Lesson Plans</h2>
 
-                    <ul>
-                        <li>Lesson PlanA</li>
-                        <li>Lesson PlanB</li>
-                    </ul>
-
+                    <Link to="/MtDashboard/LessonPlanCreation">
                     <button>Create Lesson Plan</button>
+                    </Link>
+
+                    <Link to="/MtDashboard/Lesson">
+                    <button>View Lesson Plan</button>
+                    </Link>
 
                 </section>
 
                 <section className="Assignment">
                     <h2>Assignments</h2>
 
-                    <ul>
-                        <li>Assignmets1</li>
-                        <li>Assignmets2</li>
-                    </ul>
-
+                    <Link to="/MtDashboard/CreateAssignment">
                     <button>Create Assignments</button>
+                    </Link>
+
+                    <Link to="/MtDashboard/Assignment">
+                    <button>View Assignments</button>
+                    </Link>
 
                 </section>
 
                 <section className="grade">
                     <h2>Grade the assignments</h2>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Student</th>
-                                <th>Assignments</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-
-                        <body>
-                            <tr>
-                                <td>Student1</td>
-                                <td>Assignments1</td>
-                                <td><button>Grade</button></td>
-                            </tr>
-                        </body>
-                    </table>
-                </section>
-
-                <section className="Announcements">
-                    <h2>Announcements</h2>
-
-                    <ul>
-                        <li>1.Announcements</li>
-                    </ul>
-                    <button>Announcements</button>
+                    <Link to="/MtDashboard/GradedAssignment">
+                    <button>Grade Assignments</button>
+                    </Link>
                 </section>
             </div>
         </div>

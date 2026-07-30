@@ -1,36 +1,121 @@
-function StudentForm() {
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+
+function Register() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    age: "",
+    course: "",
+    role: "student",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("http://127.0.0.1:5000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data.message && data.message.toLowerCase().includes("success")) {
+          alert("Registration successful! Please log in.");
+          navigate("/Login");
+        } else {
+          alert(data.message || "Registration failed");
+        }
+      })
+      .catch((error) => {
+        console.error("Registration error:", error);
+        alert("Something went wrong. Is the backend running on port 5000?");
+      });
+  };
+
   return (
-    <div>
-      <h2>Student Registration</h2>
-      <form>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label htmlFor="age">Age:</label>
-        <input type="number" id="age" name="age" required />
-
-        <label htmlFor="course">Course:</label>
-        <select id="course" name="course" required>
-          <option value="">Select a course</option>
-          <option value="painting">Painting Classes🖌️ 🎨</option>
-          <option value="sculpture">Sculpture Workshops🗿 🛠️</option>
-          <option value="seminars">Drawing Seminars✏️ 🖍️</option>
-          <option value="history">Art History Lectures🏛️ 📚</option>
-          <option value="instrumentals">Instrumentals🎵 🎹</option>
-          <option value="music">Music Classes🎼 🎵</option>
-          <option value="acting">Acting Classes🎭 🎬</option>
-          <option value="theater">Theater Classes🎭 🎟️</option>
-          <option value="dance">Dance Classes💃 🕺</option>
-          <option value="sketch">Sketching Classes✏️ ✍️</option>
-        </select>
-
-        <button type="submit">Register</button>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="register-container">
+        <div className="form-container">
+          <h2 className="form-title">Registration Form</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Age</label>
+              <input
+                type="number"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Course</label>
+              <input
+                type="text"
+                name="course"
+                value={formData.course}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Role</label>
+              <select name="role" value={formData.role} onChange={handleChange} required>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+              </select>
+            </div>
+            <button type="submit" className="submit-btn">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
-export default StudentForm;
+export default Register;

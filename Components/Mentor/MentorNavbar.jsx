@@ -31,11 +31,7 @@ function MentorNavbar() {
         </li>
 
         <li>
-          <Link to="/create-assignment">Create Assignment</Link>
-        </li>
-
-        <li>
-          <Link to="/students">Students</Link>
+          <Link to="/createassignment">Create Assignment</Link>
         </li>
 
         <li>

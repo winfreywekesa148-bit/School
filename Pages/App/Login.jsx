@@ -81,10 +81,10 @@ function Login() {
                 Forgot Password?
               </Link>
             </div>
-          </form>
-          <p className="register-link">
+            <p className="register-link">
             Don't have an account? <Link to="/Register">Register</Link>
           </p>
+          </form>
         </div>
       </div>
       <Footer />

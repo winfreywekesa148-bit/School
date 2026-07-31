@@ -1,46 +1,3 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #222;
-    color: white;
-    padding: 15px 40px;
-}
-
-.navbar h2 {
-    margin: 0;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    align-items: center;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.nav-links a:hover {
-    color: #f8b400;
-}
-
-.nav-links button {
-    background: crimson;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.nav-links button:hover {
-    background: darkred;
-}
-
 h1 {
     font-size: 40px;
     text-align: center;
@@ -92,13 +49,6 @@ form {
   margin: 0;
   color: #596675;
   font-size: 18px;
-}
-
-
-
-body {
-    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
-    margin: 0;
 }
 
 .container {
@@ -338,4 +288,175 @@ textarea.form-control {
     padding: 2rem 1.5rem;
     min-height: 70vh; /* Expands even further on mobile screens */
   }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline-color: #222;
+    color: white;
+    padding: 15px 40px;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #f8b400;
+}
+
+.nav-links button {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-links button:hover {
+    background: darkred;
+}
+
+.card {
+    width: 350px;
+    padding: 25px;
+    margin: 20px;
+    background: #ffffff;
+
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.card button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #1e3a8a;
+    color: white;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #15306e;
+}
+
+body {
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
+    margin: 0;
+}
+
+.container {
+  padding: 25px;
+  margin: 20px;
+  outline-color: #ffffff;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Whole Dashboard */
+
+.dashboard{
+    min-height:100vh;
+    padding:40px;
+    background:#f4f7fb;
+}
+
+/* Heading */
+
+.dashboard h1{
+    text-align:center;
+    font-size:40px;
+    color:#1e3a8a;
+    margin-bottom:50px;
+    font-weight:bold;
+}
+
+/* Cards Container */
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* Individual Card */
+
+.dashboard-card{
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.dashboard-card h2{
+    color:#2563eb;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.dashboard-card p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.dashboard-card button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dashboard-card button:hover{
+    background:#1d4ed8;
 }

@@ -1,1 +1,341 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    color: white;
+    padding: 15px 40px;
+}
 
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #f8b400;
+}
+
+.nav-links button {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-links button:hover {
+    background: darkred;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;   
+    margin: 30px;
+
+}
+
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20;
+    width: 700px;          /* Makes the form wider */
+    min-height: 700px;     /* Makes the form taller */
+    margin: 40px auto; 
+    border-radius: 15px; 
+}
+
+.app {
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: 38px 20px 64px;
+}
+
+.app-header {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1;
+  color: #1185b7;
+}
+
+.header-copy {
+  max-width: 640px;
+  margin: 0;
+  color: #596675;
+  font-size: 18px;
+}
+
+
+
+body {
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
+    margin: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    padding-top: 0;
+
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    padding-top: 0;
+
+}
+
+:root {
+  /* Art School Color Palette */
+  --bg-canvas: #FAF8F5;          /* Warm gallery canvas background */
+  --bg-card: #FFFFFF;            /* Clean white container background */
+  --text-black: #000000;         /* Primary black text requirement */
+  --border-color: #E2DDD5;       /* Subtle neutral border */
+  --accent-art: #2B2B2B;         /* Dark Charcoal accent */
+  --accent-gold: #D4A373;        /* Subtle artistic canvas accent */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  font-family: var(--font-body);
+  color: var(--text-black);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Strict Black Typography Requirement */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-black) !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+p, span, label, li, a {
+  color: var(--text-black) !important;
+}
+
+/* 3. Top Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.navbar a:hover {
+  opacity: 0.6;
+}
+
+/* 4. Page Layout Container */
+.page-wrapper {
+  margin-top: 70px; /* Accounts for fixed navbar height */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  width: 100%
+}
+
+/* 5. Main Form Component (Occupies >50% of viewport) */
+.form-container {
+  width: 100%;
+  max-width: 850px;              /* Expands wide on desktop */
+  min-height: 65vh;              /* Guarantees >50% viewport height */
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Creative gallery subtle top border accent */
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #111111, var(--accent-gold), #111111);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-header h1 {
+  font-size: 2rem;
+}
+
+.form-header p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--text-black);
+  background-color: #FAFAFA;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.form-control:focus {
+  border-color: var(--text-black);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--text-black);
+  color: #FFFFFF !important; /* High-contrast white button text */
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+  background-color: #222222;
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .form-container {
+    padding: 2rem 1.5rem;
+    min-height: 70vh; /* Expands even further on mobile screens */
+  }
+}

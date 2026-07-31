@@ -13,7 +13,7 @@ function Assignments() {
     ];
 
     return (
-        <div>
+        <div className="container">
             <MentorNavbar/>
             <h1>Assignments</h1>
 

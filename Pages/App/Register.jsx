@@ -44,8 +44,8 @@ function Register() {
 
   return (
     <>
-      <div className="register-container">
-        <div className="form-container">
+      <div className="container">
+        <div>
           <h2 className="form-title">Registration Form</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">

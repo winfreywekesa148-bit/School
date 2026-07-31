@@ -1,3 +1,5 @@
+import StudentNavbar from "../../Components/Student/StudentNavbar";
+
 function Grade() {
     const grades = [
         {
@@ -10,6 +12,7 @@ function Grade() {
 
     return (
         <div className="container">
+            <StudentNavbar/>
             <h1>My Grades</h1>
             <table>
                 <thead>

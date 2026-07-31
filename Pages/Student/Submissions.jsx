@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StudentNavbar from "../../Components/Student/StudentNavbar";
 
 function Assignms() {
     const [submission, setSubmission] = useState({
@@ -34,6 +35,7 @@ function Assignms() {
 
     return (
         <div className="container">
+            <StudentNavbar/>
             <h1>Submit Assignment</h1>
 
             <form onSubmit={handleSubmit}>
@@ -42,10 +44,22 @@ function Assignms() {
 
                 <input type="text" name="assignment" placeholder="title" onChange={handleChange}/>
 
-                <label>Course</label>
-
-                <input type="text" name="course" placeholder="course" onChange={handleChange}/>
-
+                
+                <label htmlFor="course">Course:</label>
+                 <select id="course" name="course" required>
+                   <option value="">Select your course</option>
+                   <option value="painting">Painting Classes🖌️ 🎨</option>
+                   <option value="sculpture">Sculpture Workshops🗿 🛠️</option>
+                   <option value="seminars">Drawing Seminars✏️ 🖍️</option>
+                   <option value="history">Art History Lectures🏛️ 📚</option>
+                   <option value="instrumentals">Instrumentals🎵 🎹</option>
+                   <option value="music">Music Classes🎼 🎵</option>
+                   <option value="acting">Acting Classes🎭 🎬</option>
+                   <option value="theater">Theater Classes🎭 🎟️</option>
+                   <option value="dance">Dance Classes💃 🕺</option>
+                   <option value="sketch">Sketching Classes✏️ ✍️</option>
+                 </select>
+             
                 <label>Ans</label>
 
                 <textarea type="text" name="submissiontext" onChange={handleChange}/>

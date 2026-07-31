@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import "./Login.css";
 import { useNavigate, Link } from "react-router-dom";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "../../Components/App/Footer";
 
 function Login() {
   const navigate = useNavigate();
@@ -10,42 +8,46 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const userInfo = { name, email, password };
 
-    fetch("https://school-backend.onrender.com/login", {
+    try {
+
+    const response = await fetch("http://127.0.0.1:5000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(userInfo),
     })
-      .then((resp) => resp.json())
-      .then((data) => {
-        if (data.access_token) {
-          localStorage.setItem("access_token", data.access_token);
-          localStorage.setItem("role", data.role);
+      const data = await response.json();
 
-          if (data.role === "teacher") {
+      if (!response.ok) {
+        alert(data.message || "Login failed.");
+        return;
+      }
+      // Save token and role
+      localStorage.setItem("access_token", data.token);
+      localStorage.setItem("role", data.role);
+
+      if (data.role === "teacher") {
             navigate("/MtDashboard");
-          } else if (data.role === "student") {
+      } else if (data.role === "student") {
             navigate("/StdDashboard");
-          }
-        } else {
-          alert(data.message || "Login failed");
-        }
-      })
-      .catch((error) => {
+      } else {
+        alert("Unknown user role")
+      }
+      
+      } catch(error) {
         console.error("Login error:", error);
         alert("Something went wrong. Is the backend running on port 5000?");
-      });
-  };
+      };
+   };
 
   return (
     <>
-      <Navbar />
       <div className="container">
         <div className="login-container">
           <h2 className="title">Login</h2>

@@ -1,6 +1,6 @@
 function about() {
   return (
-    <div>
+    <div className="container">
       <h1>About Us</h1>
       <h2>Lupine Art Academy</h2>
       <p>The name Lupine Art Academy came from a flower which means "wolf" in Latin, symbolizing happiness, creativity, imagination, commitment to excellence and passion for art.</p>

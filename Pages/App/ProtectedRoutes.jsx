@@ -1,18 +1,17 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-function ProtectedRoutes({ allowedRole }) {
-  const token = localStorage.getItem("access_token");
-  const role = localStorage.getItem("role");
+function ProtectedRoute({ children, allowedRole }) {
+    const token = localStorage.getItem("access_token");
+    const role = localStorage.getItem("role");
 
-  if (!token) {
-    return <Navigate to="/Login" replace />;
-  }
+    if (!token) {
+        return <Navigate to="/login" replace />;
+    }
 
-  if (role !== allowedRole) {
-    return <Navigate to="/unauthorized" replace />;
-  }
+    if (allowedRole && role !== allowedRole) {
+        return <Navigate to="/" replace/>;
+    }
 
-  return <Outlet />;
+    return children;
 }
-
-export default ProtectedRoutes;
+export default ProtectedRoute;

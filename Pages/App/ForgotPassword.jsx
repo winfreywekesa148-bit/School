@@ -14,7 +14,7 @@ function ForgotPassword() {
             </p>
 
             <div>
-                <Link to="/reset-password">Reset Password</Link>
+                <Link to="/ResetPassword">Reset Password</Link>
             </div>
 
         </div>

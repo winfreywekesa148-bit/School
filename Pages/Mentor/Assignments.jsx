@@ -15,7 +15,7 @@ function Assignments() {
         <div>
             <h1>Assignments</h1>
 
-            <Link to="/assigns">
+            <Link to="/createassignment">
             <button>Create Assignments</button>
             </Link>
 

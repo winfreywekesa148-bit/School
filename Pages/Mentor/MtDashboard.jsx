@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 function MtDashboard() {
     return (
@@ -7,16 +7,15 @@ function MtDashboard() {
             <h1>Mentor Dashboard</h1>
 
             <p>Welcome Back</p>
-
             <div>
                 <section className="Lesson plan">
                     <h2>Lesson Plans</h2>
 
-                    <Link to="/MtDashboard/LessonPlanCreation">
+                    <Link to="/LessonPlanCreation">
                     <button>Create Lesson Plan</button>
                     </Link>
 
-                    <Link to="/MtDashboard/Lesson">
+                    <Link to="/Lesson">
                     <button>View Lesson Plan</button>
                     </Link>
 
@@ -25,11 +24,11 @@ function MtDashboard() {
                 <section className="Assignment">
                     <h2>Assignments</h2>
 
-                    <Link to="/MtDashboard/CreateAssignment">
+                    <Link to="/CreateAssignment">
                     <button>Create Assignments</button>
                     </Link>
 
-                    <Link to="/MtDashboard/Assignment">
+                    <Link to="/assignments">
                     <button>View Assignments</button>
                     </Link>
 
@@ -38,12 +37,14 @@ function MtDashboard() {
                 <section className="grade">
                     <h2>Grade the assignments</h2>
 
-                    <Link to="/MtDashboard/GradedAssignment">
+                    <Link to="/GradedAssignments">
                     <button>Grade Assignments</button>
                     </Link>
                 </section>
             </div>
+            <Outlet/>
         </div>
     );
+        
 }
 export default MtDashboard;

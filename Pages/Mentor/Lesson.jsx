@@ -1,47 +1,36 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function LessonPlans() {
-    const lessonPlans = [
-        {
-            id: 1,
-            course: "Acting Classes🎭 🎬",
-            mentor_id: 3,
-            mentorfirst_name: "John",
-            mentorlast_name: "Doe",
-            topic: "Getting into character",
-            date: "2026-7-27"
-        }
-    ];
+    const [lessons, setLessons] = useState([]);
+
+    useEffect(() => {
+        const token = localStorage.getItem("access_token");
+
+        fetch("http://127.0.0.1:5000/lesson-plan")
+            .then((response) => response.json())
+            .then((data) => setLessons(data))
+            .catch((error) => console.log(error));
+    }, []);
 
     return (
-        <div>
+        <div className="container">
             <h1>Lesson Plans</h1>
 
-            <Link to="/newlessonplan">
+            <Link to="/lessonplancreation">
             <button>Create lesson plan</button>
             </Link>
 
             <table>
-
-                <thead>
-                    <tr>
-                        <th>Course</th>
-                        <th>Mentor</th>
-                        <th>Topic</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-
                 <tbody>
-
-                    {lessonPlans.map((lesson) => {
-                        <tr>
-                            <td>{lesson.course}</td>
-                            <td>{lesson.mentor}</td>
-                            <td>{lesson.topic}</td>
-                            <td>{lesson.date}</td>
-                        </tr>
-                    })}
+                    {lessons.map((lesson) => (
+                       <tr key={lesson.lesson_id}>
+                          <td>{lesson.course_name}</td>
+                          <td>{lesson.mentorfirst_name} {lesson.mentorlast_name}</td>
+                          <td>{lesson.topic}</td>
+                          <td>{lesson.date}</td>
+                       </tr>
+                 ))}
                 </tbody>
             </table>
         </div>

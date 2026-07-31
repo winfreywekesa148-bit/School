@@ -7,7 +7,7 @@ function LessonPlans() {
     const lesson = location.state;
 
     return (
-         <div className="container>
+         <div className="container">
             <MentorNavbar/>
             <h1>Lesson Plan</h1>
 

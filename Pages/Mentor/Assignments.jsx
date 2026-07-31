@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import MentorNavbar from "../../Components/Mentor/MentorNavbar";
 
 function Assignments() {
     const assignments = [
@@ -13,6 +14,7 @@ function Assignments() {
 
     return (
         <div>
+            <MentorNavbar/>
             <h1>Assignments</h1>
 
             <Link to="/createassignment">

@@ -1,38 +1,26 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import MentorNavbar from "../../Components/Mentor/MentorNavbar";
 
 function LessonPlans() {
-    const [lessons, setLessons] = useState([]);
+    const location = useLocation();
 
-    useEffect(() => {
-        const token = localStorage.getItem("access_token");
-
-        fetch("http://127.0.0.1:5000/lesson-plan")
-            .then((response) => response.json())
-            .then((data) => setLessons(data))
-            .catch((error) => console.log(error));
-    }, []);
+    const lesson = location.state;
 
     return (
-        <div className="container">
-            <h1>Lesson Plans</h1>
+         <div>
+            <MentorNavbar/>
+            <h1>Lesson Plan</h1>
 
-            <Link to="/lessonplancreation">
-            <button>Create lesson plan</button>
-            </Link>
-
-            <table>
-                <tbody>
-                    {lessons.map((lesson) => (
-                       <tr key={lesson.lesson_id}>
-                          <td>{lesson.course_name}</td>
-                          <td>{lesson.mentorfirst_name} {lesson.mentorlast_name}</td>
-                          <td>{lesson.topic}</td>
-                          <td>{lesson.date}</td>
-                       </tr>
-                 ))}
-                </tbody>
-            </table>
+            {lesson ? (
+                <>
+                    <p>Course: {lesson.course_name}</p>
+                    <p>Mentor: {lesson.mentorfirst_name} {lesson.mentorlast_name}</p>
+                    <p>Topic: {lesson.topic}</p>
+                    <p>Date: {lesson.date}</p>
+                </>
+            ) : (
+                <p>No lesson plan found.</p>
+            )}
         </div>
     );
 }

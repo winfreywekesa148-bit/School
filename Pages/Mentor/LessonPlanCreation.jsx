@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MentorNavbar from "../../Components/Mentor/MentorNavbar";
 
 function CreateLessonPlan() {
   const navigate = useNavigate();
 
+  
   const [formData, setFormData] = useState({
     course_name: "",
     mentorfirst_name: "",
@@ -51,8 +53,9 @@ function CreateLessonPlan() {
     }
   };
 
-  return (
+   return (
     <div className="container">
+        <MentorNavbar/>
       <h2>Create Lesson Plan</h2>
 
       <form onSubmit={handleSubmit}>

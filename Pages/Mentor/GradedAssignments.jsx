@@ -1,3 +1,5 @@
+import MentorNavbar from "../../Components/Mentor/MentorNavbar";
+
 function GradedAssignment(){
     const submission = [
         {
@@ -11,6 +13,7 @@ function GradedAssignment(){
 
     return (
         <div className="container">
+            <MentorNavbar/>
             <h1>Grade Assignments</h1>
 
             <table>

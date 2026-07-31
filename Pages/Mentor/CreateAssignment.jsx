@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MentorNavbar from "../../Components/Mentor/MentorNavbar";
 
 function CreateAssignment() {
     const [assignment, setAssignment] = useState({
@@ -26,6 +27,7 @@ function CreateAssignment() {
 
     return (
         <div className="container">
+            <MentorNavbar/>
             <h1>Create Assignment</h1>
 
             <form onSubmit={handleSubmit}>
